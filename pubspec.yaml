@@ -1,6 +1,6 @@
 name: controller_pubsub
 description: A Flutter package providing a simple implementation of the Publisher-Subscriber pattern for controllers. This package is designed to facilitate communication between controllers.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/Spriggan1992/controller_pubsub
 repository: https://github.com/Spriggan1992/controller_pubsub
 
