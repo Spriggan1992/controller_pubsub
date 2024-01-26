@@ -19,7 +19,7 @@ A Flutter package providing a simple implementation of the Publisher-Subscriber 
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
+Include short and useful examples for package users. Add longer examples
 to `/example` folder.
 
 ```dart
@@ -47,7 +47,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState>
     );
   }
 }
-
+/// This is a sample of how to use the [ControllerListener] mixin class.
 class LogInBloc extends Bloc<LogInEvent, LogInState>
     with ControllerListener<AuthBloc> {
 
