@@ -8,15 +8,20 @@ import 'package:controller_pubsub/controller_watcher.dart';
 /// See also:
 ///
 ///  * [ControllerWatcher]
-///  * [ControllerListener]
-mixin class ControllerListener<T> {
+///  * [ControllerSubscriber]
+mixin class ControllerSubscriber<T> {
+  /// Handles notifications received by the subscriber.
+  ///
+  /// This method is invoked when the subscribed controller notifies about a
+  /// change, passing an optional [value]. Implement this method to define
+  /// custom handling of notifications in your subscriber class.
   void handleNotification([dynamic value]) {}
 
   /// Adds a listener to the list of listeners.
   ///
   /// This method is a wrapper around [ControllerWatcher.addListener].
   /// [listener] is the listener to be added.
-  void addListener(ControllerListener<T> listener) {
+  void addListener(ControllerSubscriber<T> listener) {
     ControllerWatcher<T>().addListener(listener);
   }
 
@@ -24,7 +29,7 @@ mixin class ControllerListener<T> {
   ///
   /// This method is a wrapper around [ControllerWatcher.removeListener].
   /// [listener] is the listener to be removed.
-  void removeListener(ControllerListener<T> listener) {
+  void removeListener(ControllerSubscriber<T> listener) {
     ControllerWatcher<T>().removeListener(listener);
   }
 }

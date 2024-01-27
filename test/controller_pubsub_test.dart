@@ -1,4 +1,4 @@
-import 'package:controller_pubsub/controller_listener.dart';
+import 'package:controller_pubsub/controller_subscriber.dart';
 import 'package:controller_pubsub/controller_publisher.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:controller_pubsub/controller_watcher.dart';
@@ -36,6 +36,6 @@ void main() {
 
 class TestType {}
 
-class MyControllerListener with ControllerListener<TestType> {}
+class MyControllerListener with ControllerSubscriber<TestType> {}
 
 class MyControllerPublisher with ControllerPublisher<TestType> {}

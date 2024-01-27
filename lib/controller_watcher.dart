@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import 'controller_listener.dart';
+import 'controller_subscriber.dart';
 
 /// A class that can be extended to provide a mechanism for notifying listeners of changes to a value.
 ///
@@ -22,14 +22,14 @@ base class ControllerWatcher<T> {
     return _instances[T]!;
   }
 
-  final ObserverList<ControllerListener<T>> _listeners =
-      ObserverList<ControllerListener<T>>();
+  final ObserverList<ControllerSubscriber<T>> _listeners =
+      ObserverList<ControllerSubscriber<T>>();
 
   /// Returns a copy of the list of registered listeners.
   ///
   /// The list returned by this method is a copy of the internal list of listeners and is safe to iterate over.
-  List<ControllerListener<T>> get listeners {
-    final localListeners = List<ControllerListener<T>>.from(_listeners);
+  List<ControllerSubscriber<T>> get listeners {
+    final localListeners = List<ControllerSubscriber<T>>.from(_listeners);
 
     return localListeners;
   }
@@ -48,14 +48,14 @@ base class ControllerWatcher<T> {
   /// Adds a listener to the list of listeners.
   ///
   /// If the listener is already registered, this method has no effect.
-  void addListener(ControllerListener<T> listener) {
+  void addListener(ControllerSubscriber<T> listener) {
     _listeners.add(listener);
   }
 
   /// Removes a listener from the list of listeners.
   ///
   /// If the listener is not registered, this method has no effect.
-  void removeListener(ControllerListener<T> listener) {
+  void removeListener(ControllerSubscriber<T> listener) {
     _listeners.remove(listener);
   }
 }

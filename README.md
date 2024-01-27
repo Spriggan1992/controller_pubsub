@@ -15,7 +15,7 @@ A Flutter package providing a simple implementation of the Publisher-Subscriber 
 
    ```yaml
    dependencies:
-     controller_pubsub: ^0.0.1
+     controller_pubsub: ^0.0.3
 
 ## Usage
 
@@ -49,7 +49,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState>
 }
 /// This is a sample of how to use the [ControllerListener] mixin class.
 class LogInBloc extends Bloc<LogInEvent, LogInState>
-    with ControllerListener<AuthBloc> {
+    with ControllerSubscriber<AuthBloc> {
 
   @override
   void handleNotification([value]) {
